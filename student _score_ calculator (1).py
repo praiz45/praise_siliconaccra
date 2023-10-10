@@ -3,24 +3,26 @@ import time
  #calculation of student grades scores based on thier subject in science
 print("Student grade calculator for science_subject")
 
+   
 
 #lists showing number of subect in science 
-Science=["maths","chemistry","english","physics"]
+Science=["maths","chemistry","english","physics","biology"]
 print("Science_subject")
 print(Science)
 print()
      
-#enter a number which is less than or equal to twenty five(<=25) for all science subject
+#enter a number which is less than or equal to hundred (<=100) for all science subject
+#exceptions
 while True:
     try:
         student_score_maths=int(float(input("enter score for maths: ")))
     except ValueError:
         print("please try again")
         continue
-    if student_score_maths <=25:
+    if student_score_maths <=100:
         break
     else:
-        print("number should be less or equal to twenty five (<=25)")
+        print("number should be less or equal to hundred (<=100)")
         continue
 
 
@@ -30,10 +32,10 @@ while True:
     except ValueError:
         print("please try again")
         continue
-    if student_score_chemistry <=25:
+    if student_score_chemistry <=100:
         break
     else:
-        print("number should be less or equal to twenty five (<=25)")
+        print("number should be less or equal to hundred (<=100)")
         continue
 
 
@@ -43,10 +45,10 @@ while True:
     except ValueError:
         print("please try again")
         continue
-    if student_score_english <=25:
+    if student_score_english <=100:
         break
     else:
-        print("number should be less or equal to twenty five (<=25)")
+        print("number should be less or equal to hundred (<=100)")
         continue
 
 
@@ -56,11 +58,22 @@ while True:
     except ValueError:
         print("please try again")
         continue
-    if student_score_physics <=25:
+    if student_score_physics <=100:
         break
     else:
-        print("number should be less or equal to twenty five (<=25)")
+        print("number should be less or equal to hundred (<=100)")
         continue
+while True:
+    try:
+        student_score_biology=int(float(input("enter score for biology: ")))
+    except ValueError:
+        print("please try again")
+        continue
+    if student_score_biology<=100:
+        break
+    else:
+        print("number should be less or equal to hundred (<=100)")
+
 
 #giving the time to process
 print()
@@ -69,10 +82,12 @@ print("processing....")
 time.sleep(5.0)
 print()
 #student total score
-total_score_science=student_score_maths+student_score_english+student_score_chemistry+student_score_physics
-print(total_score_science)
+total_score_science=student_score_maths+student_score_english+student_score_chemistry+student_score_physics+student_score_biology
+final_score=total_score_science//5
+#students final_score
+print(final_score)
 
-student_score=total_score_science
+student_score=final_score
 
 #student grades ranging from A to F
 if student_score >=80 <=100:
